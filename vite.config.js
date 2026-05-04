@@ -2,13 +2,16 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
 // https://vite.dev/config/
-export default defineConfig({
-    // base: '/v3-vite/',
-    base: '/',
-    plugins: [vue()],
-    server: {
-        host: '0.0.0.0',
-        port: '3600',
-        proxy: {},
-    },
+export default defineConfig(({ mode }) => {
+    // github自动部署适配
+    const isGithub = process.env.BUILD_GITHUB === 'true';
+    return {
+        base: isGithub ? '/v3-vite/' : '/',
+        plugins: [vue()],
+        server: {
+            host: '0.0.0.0',
+            port: '3600',
+            proxy: {},
+        },
+    };
 });
