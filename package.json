@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/",
     "build:github": "vite build --base=/v3-vite/",
     "preview": "vite preview"
   },
