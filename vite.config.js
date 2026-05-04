@@ -3,7 +3,8 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vite.dev/config/
 export default defineConfig({
-    base: '/v3-vite/',
+    // base: '/v3-vite/',
+    base: '/',
     plugins: [vue()],
     server: {
         host: '0.0.0.0',
