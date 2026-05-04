@@ -7,7 +7,7 @@ import { cloudflare } from '@cloudflare/vite-plugin';
 export default defineConfig(({ mode }) => {
     return {
         base: '/',
-        plugins: [vue()],
+        plugins: [vue(), cloudflare()],
         server: {
             host: '0.0.0.0',
             port: '3600',
